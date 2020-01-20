@@ -27,6 +27,9 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  curved_navigation_bar:
+  fancy_bottom_navigation:
+  rflutter_alert:
 
 
 # For information on the generic Dart part of this file, see the

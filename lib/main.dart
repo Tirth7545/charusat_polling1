@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'student.dart';
+import 'faculty.dart';
 
 void main() => runApp(MyApp());
 
@@ -8,6 +10,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: HomePage(),
+      theme: ThemeData(
+        primarySwatch: Colors.blue
+      ),
     );
   }
 }
@@ -18,6 +23,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -107,7 +113,11 @@ class _HomePageState extends State<HomePage> {
                           elevation: 7.0,
                           child: InkWell(
                             borderRadius: BorderRadius.circular(20),
-                            onTap: () {},
+                            onTap: () {
+                              Navigator.push(context,
+                              MaterialPageRoute(builder: (context) => Student())
+                              );
+                            },
                             child: Center(
                               child: Text(
                                 "Login as a Student",
@@ -141,7 +151,12 @@ class _HomePageState extends State<HomePage> {
                           elevation: 7.0,
                           child: InkWell(
                             borderRadius: BorderRadius.circular(20),
-                            onTap: () {},
+                            onTap: () {
+                                  Navigator.push(context,
+                                  MaterialPageRoute(
+                                      builder: (context) => Faculty())
+                                  );
+                            },
                             child: Center(
                               child: Text(
                                 "Login as a Faculty",
