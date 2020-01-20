@@ -30,6 +30,7 @@ dev_dependencies:
   curved_navigation_bar:
   fancy_bottom_navigation:
   rflutter_alert:
+  like_button:
 
 
 # For information on the generic Dart part of this file, see the
