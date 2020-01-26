@@ -20,7 +20,7 @@ class _StudentState extends State<Student> {
   }
 
   List<Color> ll = [
-    Colors.purpleAccent,
+    Color(0xFFb956cc),
     Colors.white,
     Colors.cyan,
   ];
@@ -36,7 +36,7 @@ class _StudentState extends State<Student> {
 //        circleColor: Colors.transparent,
 //        activeIconColor: Colors.pinkAccent,
 //          index: 0,
-          backgroundColor: ll[_page],
+        backgroundColor: ll[_page],
         key: _bottomNavigationKey,
 //        tabs: [
 //          TabData(iconData: Icons.home, title: "Home"),
@@ -46,7 +46,7 @@ class _StudentState extends State<Student> {
         items: <Widget>[
           Icon(Icons.home, size: 30),
           Icon(Icons.add, size: 30),
-          Icon(Icons.bookmark , size: 30),
+          Icon(Icons.bookmark, size: 30),
         ],
 //        onTabChangedListener: (index) {
 //          setState(() {
@@ -83,16 +83,16 @@ class _StudentState extends State<Student> {
               ),
             ),
             ListTile(
-              title: new Text("Page one "),
-              trailing: Icon(Icons.arrow_upward),
+              title: new Text("My Opinions"),
+              trailing: Icon(Icons.pan_tool),
             ),
             ListTile(
-              title: new Text("Page two "),
-              trailing: Icon(Icons.arrow_downward),
+              title: new Text("Agreed Opinion"),
+              trailing: Icon(Icons.offline_pin),
             ),
             Divider(),
             ListTile(
-              title: new Text("Close"),
+              title: new Text("Logout"),
               trailing: Icon(Icons.close),
               onTap: () => Navigator.of(context).pop(),
             )

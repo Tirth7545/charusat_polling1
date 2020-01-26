@@ -95,15 +95,51 @@ class _AddState extends State<Add> {
                     style: TextStyle(color: Colors.blueAccent, fontSize: 15),
                   ),
                 ),
-                SizedBox(width: 60,),
+                SizedBox(
+                  width: 60,
+                ),
                 Container(
                   child: Switch(
                     value: isSwitched,
                     onChanged: (value) {
+                      if (isSwitched == true) {
+                        print(value);
+                        return Alert(
+                          context: context,
+                          type: AlertType.error,
+                          title: "Warning",
+                          desc: "Are You Sure You Want to Show Your Profile",
+                          buttons: [
+                            DialogButton(
+                              child: Text(
+                                "Ok",
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 20),
+                              ),
+                              onPressed: () {
+                                Navigator.pop(context);
+                                setState(() {
+                                  isSwitched = value;
+                                  print(value);
+                                });
+                              },
+                              width: 120,
+                            ),
+                            DialogButton(
+                              child: Text(
+                                "Nope",
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 20),
+                              ),
+                              onPressed: () => Navigator.pop(context),
+                              width: 120,
+                            )
+                          ],
+                        ).show();
+                      }
                       setState(() {
                         isSwitched = value;
                         print(value);
-
                       });
                     },
                     activeTrackColor: Colors.blueAccent,
@@ -195,7 +231,6 @@ class _AddState extends State<Add> {
                       ),
                     ],
                   ),
-
                   Container(
                     width: 5.0,
                   ),
